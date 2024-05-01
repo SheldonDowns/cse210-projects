@@ -1,9 +1,24 @@
 using System;
+using System.Net;
 
-class Program
+Random randomGenerator = new Random();
+int number = randomGenerator.Next(1, 100);
+int x = 0;
+
+
+while (number != x)
 {
-    static void Main(string[] args)
+    Console.Write("What is the magic number?");
+    string guess = Console.ReadLine();
+    x = int.Parse(guess);
+
+    if (number > x)
     {
-        Console.WriteLine("Hello Prep3 World!");
+        Console.WriteLine("Higher"); 
     }
-}
+    else
+    {
+        Console.WriteLine("Lower");
+    }
+}   
+Console.WriteLine("You guessed it!");
