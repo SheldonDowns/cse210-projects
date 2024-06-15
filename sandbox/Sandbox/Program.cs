@@ -1,28 +1,12 @@
-using System;
 
-class Progarm
-{
+ public static class Program {
 
-    static void Main(string[] args)
-    {
-        
-        string greeting = "Howdy sandbox";
-        Console.WriteLine($"{greeting}");
+   public static void Main() {
+      Timer t = new Timer(TimerCallback, null, 0, 1000);
+      Console.ReadLine();
+   }
 
-        while(true)
-        {
-            Console.Write("|\b");
-            Thread.Sleep(500);
-            Console.Write("\\\b");
-            Thread.Sleep(500);
-            Console.Write("-\b");
-            Thread.Sleep(500);
-            Console.Write("/\b");
-            Thread.Sleep(500);
-            Console.Write("-\b");
-            Thread.Sleep(500);
-        }
-
-
-    }
+   private static void TimerCallback(Object o) {
+      Console.WriteLine("In TimerCallback: " + DateTime.Now);
+   }
 }
